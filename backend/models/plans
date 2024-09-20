@@ -1,0 +1,23 @@
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://127.0.0.1:27017/task1', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log(err));
+
+const featuresModel = require('./featuresModel'); // Ensure the correct path is set
+
+// Correct schema name to "PlanSchema"
+const PlanSchema = new mongoose.Schema({
+    plan: {
+        type: String,
+        unique: true
+    },
+    price: {
+        type: Number,
+    },
+    features: [featuresModel.schema] // Embedding the features schema
+});
+
+// Exporting PlanSchema correctly
+module.exports = mongoose.model("Plan", PlanSchema);

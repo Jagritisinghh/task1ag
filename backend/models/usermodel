@@ -1,0 +1,16 @@
+const mongoose=require('mongoose');
+mongoose.connect(`mongodb://127.0.0.1:27017/task1`);
+
+const userSchema=mongoose.Schema({
+    name:String,
+    username:String,
+    email:String
+})
+
+// schema->har user ka deatail
+
+// ek model create karo to perform CRUD operation jo ki pluralize version ka model banega
+
+module.exports=mongoose.model("user",userSchema);
+
+// jab koi user "/register" pe jaye to user craete ho mtlb ek route me karna chaah rhe kaam toh export krna pdega.

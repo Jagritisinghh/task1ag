@@ -1,0 +1,143 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.main-container{
+    background-color: white;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-heading{
+    color: white;
+    font-family: "Roboto";
+    margin-top: 10%;
+    margin-bottom: 3%;
+    font-size: 40px;
+}
+
+.plans-container{
+    border-radius: 10px;
+    /* background-color: yellow; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.plan-card{
+    background-color: #2f2f2f66;
+    border: 1px #ffffff solid;
+    border-radius: 10px;
+    color: white;
+    margin-bottom:20px;
+    padding: 30px;
+    font-family: "roboto";
+    line-height: 0.8cm;
+    width: 70%;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.basic-plan{
+    background-color: rgb(7, 103, 47);
+}
+.premium-plan{
+    background-color: rgb(164, 167, 2);
+}
+.vip-plan{
+    background-color: red;
+}
+.plan-type{
+    font-size: 26px;
+}
+
+.price{
+    font-size: 34px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.Buy-now-btn{
+    background-color: white;
+    color: yellow;
+     border-radius:6px ;
+     padding: 10px;
+     margin-top: 10px;
+     font-size: 16px;
+     width: 100%;
+     border: none;
+     font-weight: 300;
+     font-family: "roboto";
+     align-items: flex-end;
+}
+.vip-btn{
+    color: red;
+}
+.basic-btn{
+    color: green;
+}
+.premium-btn{
+    color: rgb(117, 117, 10);
+}
+
+.features{
+    list-style-type: none;
+}
+
+@media screen and (min-width:690px){
+    .plans-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        /* background-color: yellow; */
+
+}
+.plan-card{
+    width: 35%;
+    min-height:600px;
+}
+
+}
+
+@media screen and (min-width:1110px){
+    .main-heading{
+        font-size: 50px;
+    }
+    .plans-container{
+        display: flex;
+        flex-direction: row;
+        /* background-color: yellow; */
+        width: 95%;
+        justify-content: space-between;
+    }
+    .plan-card{
+        width: 26%;
+        min-height:800px;
+
+    }
+    .features{
+        font-size: 24px;
+        line-height: 1cm;
+        list-style-type: none;
+    }
+    .price{
+        font-size: 38px;
+        
+    }
+    .Buy-now-btn{
+       
+        font-size: 20px;
+        font-weight: 500;
+        
+   }
+
+}
