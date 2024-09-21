@@ -1,7 +1,8 @@
 // routes/feature.js
 const express = require('express');
 const router = express.Router();
-const Feature = require('../models/plans'); // Ensure this path is correct
+const Feature = require('../models/plans'); 
+
 
 // GET /api/features - Retrieve all feature plans
 router.get('/api/features', async (req, res) => {
@@ -20,5 +21,11 @@ router.get('/api/features', async (req, res) => {
         });
     }
 });
+
+
+
+
+
+
 
 module.exports = router;

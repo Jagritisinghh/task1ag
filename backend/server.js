@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const plansModel = require('./models/plans'); // Ensure this path is correct
-
+const userModel=require("./models/usermodel");
 const featuresRoute = require('./routes/feature'); // Adjust the path as necessary
+const usersRoute=require('./routes/userroute')
 
 // Middleware
 app.use(express.json());
@@ -11,9 +12,11 @@ app.use(express.json());
 // Configure CORS
 app.use(cors({
     origin: 'http://localhost:3004', // Replace with your frontend URL
-    methods: ['GET', 'POST'],
+    methods: ['GET', 'POST','PUT'],
     credentials: true
 }));
+
+
 
 app.get("/featuresInitiation", async (req, res) => {
     try {
@@ -250,11 +253,40 @@ app.get("/featuresInitiation", async (req, res) => {
     }
 });
 
+// user route
+
+app.post("/user", async (req, res) => {
+    try {
+        const user = await userModel.create({
+            name: "Jagriti",
+            email: "jagriti123@gmail.com",
+            username: "user789", 
+            plan:"" 
+        });
+
+
+        res.status(201).json({
+            message: 'User created successfully',
+            user
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error creating user',
+            error: error.message
+        });
+    }
+});
+
+
+
+
+
+app.listen(3006, () => {
+    console.log('Server is running on port 3006');
+});
+
+
 
 app.use(featuresRoute);
 
-// Start the server (ensure to set your preferred port)
-const PORT = 3006;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+app.use(usersRoute);
