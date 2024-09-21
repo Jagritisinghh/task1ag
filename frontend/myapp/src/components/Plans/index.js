@@ -27,7 +27,7 @@ const Plans = () => {
       setSelectedPlan(planName); 
       console.log(planName);
 
-      const userId = '66edc0f1274e4a3e5d367605'; 
+      const userId = '66eee530ce9faa2577ccd13d'; 
       // dummy user Id
       const response = await fetch(`http://localhost:3006/users/${userId}/update-plan`, {
         method: 'PUT',
