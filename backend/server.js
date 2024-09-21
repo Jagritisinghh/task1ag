@@ -253,21 +253,27 @@ app.get("/featuresInitiation", async (req, res) => {
     }
 });
 
-// dummy user
 async function createDummyUser() {
     try {
-        const user = await userModel.create({
-            name: "AghUser567",
-            email: "user567@gmail.com",
-            username: "user567",
-            plan: ""
-        });
-        console.log('Dummy user created:', user);
+        // Check if the user already exists
+        const existingUser = await userModel.findOne({ username: "user567" });
+        
+        if (!existingUser) {
+            // Create the dummy user if it doesn't exist
+            const user = await userModel.create({
+                name: "AghUser567",
+                email: "user567@gmail.com",
+                username: "user567",
+                plan: ""
+            });
+            console.log('Dummy user created:', user);
+        } else {
+            console.log('Dummy user already exists:', existingUser);
+        }
     } catch (error) {
         console.error('Error creating dummy user:', error.message);
     }
 }
-
 // Call function to create dummy user
 createDummyUser();
 
