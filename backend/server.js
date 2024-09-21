@@ -253,31 +253,23 @@ app.get("/featuresInitiation", async (req, res) => {
     }
 });
 
-// user route
-
-app.post("/user", async (req, res) => {
+// dummy user
+async function createDummyUser() {
     try {
         const user = await userModel.create({
-            name: "Jagriti",
-            email: "jagriti123@gmail.com",
-            username: "user789", 
-            plan:"" 
+            name: "AghUser567",
+            email: "user567@gmail.com",
+            username: "user567",
+            plan: ""
         });
-
-
-        res.status(201).json({
-            message: 'User created successfully',
-            user
-        });
+        console.log('Dummy user created:', user);
     } catch (error) {
-        res.status(500).json({
-            message: 'Error creating user',
-            error: error.message
-        });
+        console.error('Error creating dummy user:', error.message);
     }
-});
+}
 
-
+// Call function to create dummy user
+createDummyUser();
 
 
 
