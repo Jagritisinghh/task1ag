@@ -22,8 +22,30 @@ const Plans = () => {
     fetchPlans();
   }, []);
 
-  const handleSelectPlan = (planName) => {
-    setSelectedPlan(planName); // Set the clicked plan as the selected one
+  const handleSelectPlan = async (planName) => {
+    try {
+      setSelectedPlan(planName); 
+      console.log(planName);
+
+      const userId = '66edc0f1274e4a3e5d367605'; 
+      // dummy user Id
+      const response = await fetch(`http://localhost:3006/users/${userId}/update-plan`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ selectedPlan: planName }),
+      });
+       console.log("update",response);
+
+      if (response.ok) {
+        console.log(`Plan updated to ${planName} successfully!`);
+      } else {
+        console.error('Failed to update the plan.');
+      }
+    } catch (err) {
+      console.error('Error while updating plan:', err);
+    }
   };
 
   return (
