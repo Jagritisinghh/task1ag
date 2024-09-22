@@ -10,7 +10,7 @@ const Plans = () => {
     // Fetch features from the backend
     const fetchPlans = async () => {
       try {
-        const response = await fetch('https://task1ag-3.onrender.com/api/features'); // Adjust the URL if necessary
+        const response = await fetch('http://localhost:3006/api/features'); // Adjust the URL if necessary
         const data = await response.json();
         setPlans(data.data); // Assuming response contains plan data
         console.log("response", data.data);
@@ -29,7 +29,7 @@ const Plans = () => {
 
       const userId = '66eee530ce9faa2577ccd13d'; 
       // dummy user Id
-      const response = await fetch(`https://task1ag-3.onrender.com/users/${userId}/update-plan`, {
+      const response = await fetch(`http://localhost:3006/users/${userId}/update-plan`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

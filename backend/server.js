@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Configure CORS
 app.use(cors({
-    origin: 'https://task1ag-iypr.vercel.app/', // Replace with your frontend URL
+    origin: 'https://task1ag-5cxi.vercel.app/', // Replace with your frontend URL
     methods: ['GET', 'POST','PUT'],
     credentials: true
 }));
