@@ -9,12 +9,17 @@ const usersRoute=require('./routes/userroute')
 // Middleware
 app.use(express.json());
 
+
 // Configure CORS
+
 app.use(cors({
-    origin: 'https://task1ag-5cxi.vercel.app/', // Replace with your frontend URL
-    methods: ['GET', 'POST','PUT'],
-    credentials: true
-}));
+    origin:"*"
+}))
+// app.use(cors({
+//     origin: 'https://task1ag-5cxi.vercel.app/', // Replace with your frontend URL
+//     methods: ['GET', 'POST','PUT'],
+//     credentials: true
+// }));
 
 
 
