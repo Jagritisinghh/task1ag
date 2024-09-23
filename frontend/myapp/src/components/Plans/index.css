@@ -12,15 +12,9 @@
     flex-direction: column;
 }
 
-.main-heading{
-    color: white;
-    font-family: "Roboto";
-    margin-top: 10%;
-    margin-bottom: 3%;
-    font-size: 40px;
-}
 
 .plans-container{
+    margin-top: 10%;
     border-radius: 10px;
     /* background-color: yellow; */
     width: 100%;
@@ -96,14 +90,23 @@
     .plans-container{
         display: flex;
         flex-direction: row;
+
         flex-wrap: wrap;
         justify-content: space-around;
         /* background-color: yellow; */
 
 }
 .plan-card{
-    width: 35%;
-    min-height:600px;
+    width: 25%;
+    min-height:700px;
+    font-size: 14px;
+    padding: 18px;
+    padding-bottom: ;
+}
+.plan-type{
+    font-size: 20px;
+}
+.price{    font-size: 24px;
 }
 
 }
@@ -115,13 +118,13 @@
     .plans-container{
         display: flex;
         flex-direction: row;
-        /* background-color: yellow; */
         width: 95%;
         justify-content: space-between;
+        margin-top: 30px;
     }
     .plan-card{
         width: 26%;
-        min-height:800px;
+        min-height:750px;
 
     }
     .features{
